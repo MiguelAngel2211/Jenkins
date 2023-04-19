@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools {
-        maven '3.9.0'
+        maven 'Maven_3.9.1'
     }
     stages{
         stage ('build maven'){
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '4bf11780-14ee-461a-9a25-c6d89c7c5063', url: 'https://github.com/MiguelAngel2211/Jenkins.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'bdc3da64-6f47-4f75-9726-8d3b3d13a023', url: 'https://github.com/MiguelAngel2211/Jenkins.git']])
                 sh 'mvn clean install'
             }
 
